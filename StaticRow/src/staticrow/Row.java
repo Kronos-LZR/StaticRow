@@ -1,6 +1,13 @@
 package staticrow;
 
 public class Row implements IRow{
+    
+    private int[] _row;
+    private int _start, _end;
+    
+    public Row(int size){
+        _row = new int[size];
+    }
 
     @Override
     public void enqueue(int value) {
