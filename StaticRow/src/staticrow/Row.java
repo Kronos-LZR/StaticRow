@@ -3,15 +3,18 @@ package staticrow;
 public class Row implements IRow{
     
     private int[] _row;
-    private int _start, _end;
+    private int _start = -1, _end = -1;
     
     public Row(int size){
-        _row = new int[size];
+        this._row = new int[size];
+        this._start = 0;
+        this._end = 0;
     }
 
     @Override
     public void enqueue(int value) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this._row[_start] = value;
+        this._end++;
     }
 
     @Override
@@ -36,7 +39,7 @@ public class Row implements IRow{
 
     @Override
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this._end;
     }
     
 }
