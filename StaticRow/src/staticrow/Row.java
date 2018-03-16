@@ -13,8 +13,10 @@ public class Row implements IRow{
 
     @Override
     public void enqueue(int value) {
-        this._row[_start] = value;
-        this._end++;
+        if(this._row.length > this._end){
+            this._row[_end] = value;
+            this._end++;
+        }
     }
 
     @Override
